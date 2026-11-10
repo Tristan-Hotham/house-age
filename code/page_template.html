@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How old is your neighbourhood? | The age of homes in every small area of England and Wales</title>
+<meta name="description" content="Every small area of England and Wales coloured by the age of its homes, from the Council Tax lists of 2025. {{nat.England and Wales.pre1919|f0}}% of homes were built before 1919 and {{nat.England and Wales.new|f0}}% since 2009.">
+<meta property="og:title" content="How old is your neighbourhood?">
+<meta property="og:description" content="The age of the homes in all {{meta.n_lsoa|int}} small areas of England and Wales, and the tree rings of 34 cities.">
+<meta property="og:image" content="https://maps.tristanhotham.com/house-age/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/house-age/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+{{CSS}}
+</style></head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">How old is your neighbourhood?</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24113860">Paper</a><a class="x" href="{{REPO}}">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of England and Wales coloured by the age of homes in each small area">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map of {{meta.n_lsoa|int}} small areas. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true">How old is your neighbourhood? ▾</button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>How old is <span class="a">your neighbourhood?</span></h1>
+        <p class="dek">Every small area (LSOA) of England and Wales, coloured by when its homes were built, from the Council Tax lists of 2025. Choose what to colour by at the bottom; tap an area for its full age profile. England and Wales only.</p>
+        <div class="byline">{{BYLINE}}</div>
+      </div>
+    </div>
+    <div class="ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a town, area or council" aria-label="Find a town, area or council" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips" id="chips"><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Layers</h4>
+      <label><input type="checkbox" id="lyA" checked> Age of homes (colours)</label>
+      <label><input type="checkbox" id="lyO" checked> Small-area outlines (close up)</label>
+      <label><input type="checkbox" id="lyC" checked> City centres (the 34 cities)</label>
+      <label><input type="checkbox" id="lyR"> 20 km rings around the centres</label>
+      <label><input type="checkbox" id="lyB" checked> Base map labels</label>
+    </div>
+    <div class="keys" id="keys"><b id="keyTitle">Median build period</b><div id="keyBody"></div><div class="row kx" style="color:#6E604E">England and Wales; {{meta.n_lsoa|int}} small areas; grey: no homes of known age</div></div>
+    <div class="tl" id="tl"><label for="mode" class="tl-l">Colour by</label><select id="mode" aria-label="Colour the map by"></select><button id="play" aria-label="Play through the build periods">Play</button></div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+{{ESSAY}}
+<details><summary>Sources and licences</summary>
+<ul class="plain">
+<li>Homes by build period, Council Tax band and property type: Valuation Office Agency (2025), Council Tax: stock of properties, 2025, tables CTSOP4.1 and CTSOP3.1, data at 31 March 2025. Official Statistics, Open Government Licence v3.0. Counts are rounded to the nearest 10 and counts under five are suppressed by the VOA.</li>
+<li>Small-area boundaries: Office for National Statistics, Lower layer Super Output Areas (December 2021) boundaries, generalised clipped, Open Government Licence v3.0 (contains OS data © Crown copyright and database right), via the GitHub copy in drkane/geo-lookups. Simplified for the web.</li>
+<li>City list: Natural Earth populated places (public domain); city-centre points from Wikidata (CC0). Town and village names for search: Wikidata (CC0).</li>
+<li>Base map: OpenFreeMap Positron style (OpenStreetMap, ODbL). MapLibre GL JS 4.7.1 (BSD 3-Clause), topojson-client 3.1.0 (ISC).</li>
+<li>Text and figures CC BY 4.0; code MIT; derived data CC BY 4.0 (VOA and ONS data under the Open Government Licence).</li>
+</ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24113860">Read the paper</a><a href="{{REPO}}">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/house-age/">Blog post</a></div>
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) How old is your neighbourhood? The age of the housing stock in every small area of England and Wales, and the tree rings of its cities. Zenodo. <a href="https://doi.org/10.5281/zenodo.24113860">https://doi.org/10.5281/zenodo.24113860</a></p>
+<p>Code: <a href="{{REPO}}">github.com/Tristan-Hotham/house-age</a> (MIT). Text, figures and data CC BY 4.0.</p>
+<p>{{AI}}</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="js/page.js?v={{VERSION}}"></script>
+{{FULLSCREEN}}
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>
