@@ -1,0 +1,4 @@
+model,estimate,ci_lo,ci_hi,p,n,n_lad,n_city
+"M1 mean build year on distance (years per km), city FE, LAD clusters",0.60503,0.36186,0.8482,1.0794e-06,20837,244,34
+"M2 log mean distance on period order (pre-1900 to 1965-72), city FE, city clusters",0.042229,0.030697,0.053762,7.1252e-13,238,,
+"M3 log mean distance, 2009 onwards minus 1983-1999 (mean over cities)",-0.094769,-0.13945,-0.050084,,34,,
