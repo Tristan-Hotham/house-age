@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite it as below."
+title: "How Old Is Your Neighbourhood? The Age of the Housing Stock in Every Small Area of England and Wales, and the Tree Rings of Its Cities"
+type: dataset
+authors:
+  - family-names: Hotham
+    given-names: Tristan
+    orcid: "https://orcid.org/0000-0003-4931-9349"
+    affiliation: "Independent researcher"
+doi: "10.5281/zenodo.24113860"
+url: "https://maps.tristanhotham.com/house-age/"
+repository-code: "https://github.com/Tristan-Hotham/house-age"
+license: CC-BY-4.0
+keywords:
+  - "housing stock"
+  - "dwelling age"
+  - "urban growth"
+  - "vintage models"
+  - "recentralisation"
+  - "Council Tax"
+  - "LSOA"
+  - "England and Wales"
